@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Subtitles catcher",
+  "description": "Extracts youtube subtitles",
+  "version": "1.1",
+
+  "background": {
+    "page": "background.html"
+  },
+
+  "page_action": {
+    "default_icon": "catcher.png"
+  },
+
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/watch*",
+        "https://youtube.com/watch*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+
+  "permissions": [
+    "activeTab",
+    "<all_urls>",
+    "storage"
+  ],
+  "web_accessible_resources": ["script.js"]
+}
